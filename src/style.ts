@@ -15,13 +15,15 @@ export const AppContainer = styled.div`
 
 
 export const TableContainer = styled.div`
-display:grid;
+padding:5px;
 margin:0 auto;
+display:grid;
 width:fit-content;
-border:1px solid green;
 background-color:#F2F0EB;
-grid-template-columns:auto
-`
+grid-template-columns:auto;
+grid-template-rows:auto;
+border:1px solid green;
+`;
 
 // Base Table Container
 export const CustomTable = styled.div<{columns?:number}>`

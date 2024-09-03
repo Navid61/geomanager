@@ -1,5 +1,5 @@
 import { AppContainer, TableContainer } from "./style";
-import { GeoWorkspace } from "components/GeoWorkspace/Geoworkspace";
+import { Table } from "./components/Table/Table"
 
 import { ThemeProvider } from "styled-components";
 
@@ -40,7 +40,7 @@ export const App = () => {
     <ThemeProvider theme={theme}>
       <AppContainer>
         <TableContainer>
-        <GeoWorkspace {...fakeData} />
+        <Table {...fakeData}/>
         </TableContainer>
       </AppContainer>
     </ThemeProvider>

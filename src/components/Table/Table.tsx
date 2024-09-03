@@ -6,7 +6,7 @@ import {
   TableContainer,
 } from "style";
 
-type GeoWorkspaceProps = {
+type TableProps = {
   id: number;
   name: string;
   created: Date;
@@ -16,7 +16,7 @@ type contentTypeProps = {
   content: string;
 };
 
-export const GeoWorkspace = ({ id, name, created }: GeoWorkspaceProps) => {
+export const Table = ({ id, name, created }: TableProps) => {
   const contentType: contentTypeProps = { content: "center" };
   return (
     <TableContainer>
