@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { AppContainer, TableContainer } from "./style";
+import { GeoWorkspace } from "components/GeoWorkspace/Geoworkspace";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { ThemeProvider } from "styled-components";
+
+const theme = {
+  colors: {
+    primary: "#3179ba", 
+    border: {
+      default: "blue",
+      header: "cyan",
+      footer: "cyan",
+    },
+  },
+  spacing: {
+    padding: "10px",
+    height: "100%",
+    width: "100%",
+    display: "flex",
+    direction: "row",
+  },
+};
+
+// fake data
+
+interface fakeDataProp {
+  id: number;
+  name: string;
+  created: Date;
 }
 
-export default App;
+const fakeData: fakeDataProp = {
+  id: 1,
+  name: "canda",
+  created: new Date(),
+};
+
+export const App = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <AppContainer>
+        <TableContainer>
+        <GeoWorkspace {...fakeData} />
+        </TableContainer>
+      </AppContainer>
+    </ThemeProvider>
+  );
+};
