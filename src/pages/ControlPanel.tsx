@@ -20,8 +20,9 @@ const LoginPageFrame = styled.div`
   justify-content: start;
   align-items: center;
   margin: 0 auto;
-
 `;
+
+
 
 
 // const fakeData = {
@@ -33,6 +34,7 @@ const LoginPageFrame = styled.div`
 const ControlPanel: React.FC = () => {
   return (
     <LoginPageFrame>
+     
       <GeoNav/>
   
     </LoginPageFrame>
