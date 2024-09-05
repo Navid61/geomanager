@@ -1,7 +1,7 @@
-import { AppContainer, TableContainer } from "./style";
-import { Table } from "./components/Table/Table"
-
 import { ThemeProvider } from "styled-components";
+import {  lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 const theme = {
   colors: {
@@ -21,28 +21,23 @@ const theme = {
   },
 };
 
-// fake data
 
-interface fakeDataProp {
-  id: number;
-  name: string;
-  created: Date;
-}
 
-const fakeData: fakeDataProp = {
-  id: 1,
-  name: "canda",
-  created: new Date(),
-};
+
+const ControlPanel = lazy(() => import('./pages/ControlPanel'));
+
 
 export const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <AppContainer>
-        <TableContainer>
-        <Table {...fakeData}/>
-        </TableContainer>
-      </AppContainer>
+      <Router>
+      
+          <Routes>
+            <Route path="/panel" element={<ControlPanel />} />
+         
+          </Routes>
+     
+      </Router>
     </ThemeProvider>
   );
 };

@@ -16,7 +16,7 @@ type contentTypeProps = {
   content: string;
 };
 
-export const Table = ({ id, name, created }: TableProps) => {
+export const CustomizedTable = ({ id, name, created }: TableProps) => {
   const contentType: contentTypeProps = { content: "center" };
   return (
     <TableContainer>
